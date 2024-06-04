@@ -2,25 +2,24 @@ Source: ruby-rb-inotify
 Section: ruby
 Priority: optional
 Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
-Uploaders: Micah Anderson <micah@debian.org>,
-           Cédric Boutillier <boutil@debian.org>
-Build-Depends: debhelper-compat (= 12),
-               gem2deb,
-               ruby-ffi (>= 0.5.0),
+Uploaders: Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1),
+               rake,
+               ruby-concurrent,
+               ruby-ffi (>= 1.0),
                ruby-rspec
-Standards-Version: 4.5.0
+Standards-Version: 4.6.2
 Vcs-Git: https://salsa.debian.org/ruby-team/ruby-rb-inotify.git
 Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-rb-inotify
-Homepage: https://github.com/nex3/rb-inotify
+Homepage: https://github.com/guard/rb-inotify
 Testsuite: autopkgtest-pkg-ruby
-XS-Ruby-Versions: all
+Rules-Requires-Root: no
 
 Package: ruby-rb-inotify
 Architecture: all
-XB-Ruby-Versions: ${ruby:Versions}
-Depends: ruby | ruby-interpreter,
-         ruby-ffi (>= 0.5.0),
-         ${misc:Depends},
+Depends: ${misc:Depends},
+         ${ruby:Depends},
          ${shlibs:Depends}
 Description: Ruby wrapper for Linux's inotify, using FFI
  This Ruby library is a simple wrapper over inotify, a Linux kernel subsystem

@@ -1,2 +1,2 @@
-version=3
+version=4
 https://gemwatch.debian.net/rb-inotify .*/rb-inotify-(.*).tar.gz

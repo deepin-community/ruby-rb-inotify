@@ -1,0 +1,14 @@
+Description: add missing requirement on 'pathname' lib
+Author: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2023-02-07
+
+--- a/spec/notifier_spec.rb
++++ b/spec/notifier_spec.rb
+@@ -1,6 +1,7 @@
+ require 'spec_helper'
+ require 'tmpdir'
+ require 'concurrent'
++require 'pathname'
+ 
+ describe INotify::Notifier do
+   describe "instance" do

@@ -1,30 +1,19 @@
 language: ruby
-sudo: false
-dist: trusty
 cache: bundler
-rvm:
-  - 1.8
-  - 1.9
-  - 2.0
-  - 2.1
-  - 2.2
-  - 2.3
-  - 2.4
-  - jruby-head
-  - ruby-head
-  - jruby-9.1.8.0
-  - jruby-head
-  - rbx-3
+
 matrix:
+  include:
+    - rvm: 2.3
+    - rvm: 2.4
+    - rvm: 2.5
+    - rvm: 2.6
+    - rvm: jruby
+    - rvm: truffleruby
+    - rvm: jruby-head
+    - rvm: ruby-head
   allow_failures:
+    - rvm: truffleruby
+    - rvm: jruby
     - rvm: ruby-head
     - rvm: jruby-head
-    - rvm: rbx-3
   fast_finish: true
-script:
-  # Unit test
-  - bundle exec rake
-  # Install test
-  - gem build rb-inotify.gemspec
-  - gem install rb-inotify-*.gem
-  - sh -c "gem list | grep rb-inotify"
