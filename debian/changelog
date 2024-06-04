@@ -1,3 +1,38 @@
+ruby-rb-inotify (0.10.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * d/clean: remove .rspec_status. Closes: #1046142
+
+ -- Lucas Nussbaum <lucas@debian.org>  Wed, 06 Sep 2023 21:00:16 +0000
+
+ruby-rb-inotify (0.10.1-1) unstable; urgency=medium
+
+  [ Jenkins ]
+  * Remove constraints unnecessary since stretch.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+  * Update watch file format version to 4.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Micah Anderson ]
+  * Remove myself from Uploaders
+
+  [ Cédric Boutillier ]
+  * New upstream version 0.10.1
+  * Use gem install layout
+  * Drop explicit dependency on the ruby interpreter, use ruby:Depends
+    variable
+  * Bump Standards-Version to 4.6.2 (no changes needed)
+  * Refresh patch
+  * Build-depend on ruby-concurrent
+  * Add a patch to require 'pathname' lib in tests
+
+ -- Cédric Boutillier <boutil@debian.org>  Tue, 07 Feb 2023 18:22:09 +0100
+
 ruby-rb-inotify (0.9.10-2) unstable; urgency=medium
 
   * Team upload.

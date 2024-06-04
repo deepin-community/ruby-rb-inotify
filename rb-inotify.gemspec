@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
-
-$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-require 'rb-inotify/version'
+require_relative 'lib/rb-inotify/version'
 
 Gem::Specification.new do |spec|
   spec.name     = 'rb-inotify'
@@ -18,13 +16,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
-
-  spec.required_ruby_version = '>= 0'
-
-  spec.add_dependency 'ffi', '>= 0.5.0', '< 2'
-
-  spec.add_development_dependency "rspec", "~> 3.4"
-  spec.add_development_dependency "bundler", "~> 1.3"
-  # rake 11.x requires Ruby >= 1.9.3
-  spec.add_development_dependency "rake", ">= 10.5.0", "< 13"
+  
+  spec.required_ruby_version = '>= 2.2'
+  
+  spec.add_dependency "ffi", "~> 1.0"
+  
+  spec.add_development_dependency "rspec", "~> 3.6"
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "concurrent-ruby"
 end

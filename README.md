@@ -10,7 +10,7 @@ It uses the [FFI](http://wiki.github.com/ffi/ffi) gem to avoid having to compile
 [![Code Climate](https://codeclimate.com/github/guard/rb-inotify.svg)](https://codeclimate.com/github/guard/rb-inotify)
 [![Coverage Status](https://coveralls.io/repos/guard/rb-inotify/badge.svg)](https://coveralls.io/r/guard/rb-inotify)
 
-## Basic Usage
+## Usage
 
 The API is similar to the inotify C API, but with a more Rubyish feel.
 First, create a notifier:
@@ -69,6 +69,16 @@ Unfortunately, this currently doesn't work under JRuby.
 JRuby currently doesn't use native file descriptors for the IO object,
 so we can't use the notifier's file descriptor as a stand-in.
 
+### Resource Limits
+
+If you get an error like `inotify event queue has overflowed` you might be running into system limits. You can add the following to your `/etc/sysctl.conf` to increase the number of files that can be monitored:
+
+```
+fs.inotify.max_user_watches = 100000
+fs.inotify.max_queued_events = 100000
+fs.inotify.max_user_instances = 100000
+```
+
 ## Contributing
 
 1. Fork it
@@ -81,7 +91,7 @@ so we can't use the notifier's file descriptor as a stand-in.
 
 Released under the MIT license.
 
-Copyright, 2009, by Nathan Weizenbaum.  
+Copyright, 2009, by [Natalie Weizenbaum](https://github.com/nex3).
 Copyright, 2017, by [Samuel G. D. Williams](http://www.codeotaku.com/samuel-williams).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

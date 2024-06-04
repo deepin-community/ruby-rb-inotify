@@ -2,7 +2,9 @@ dependencies are installed via apt
 
 --- a/spec/spec_helper.rb
 +++ b/spec/spec_helper.rb
-@@ -1,5 +1,4 @@
+@@ -16,7 +16,6 @@
+ 	end
+ end
  
 -require "bundler/setup"
  require "rb-inotify"
